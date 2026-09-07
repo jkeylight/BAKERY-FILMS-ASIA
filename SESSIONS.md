@@ -50,3 +50,37 @@ This session attempted to improve the `PRE--LOADER.html` visual design (added Ar
 
 ### Notes
 - If continuing design work, start from the current clean state — all preloader code matches the original `loader-in`/`loader-l1`/`loader-count`/`loader-bar`/`loader-note` structure in `index.html`
+
+## Session: Page Systems, Assets & Image Direction — 2026-09-07
+
+### Completed
+
+- Synced the local project from `jkeylight/BAKERY-FILMS-ASIA`.
+- Kept the homepage as the original cinematic opening.
+- Confirmed separate routes for `/capabilities`, `/work`, `/studio`, `/experiments`, and `/contact`.
+- Updated navigation links so the five section pages open in separate browser tabs.
+- Redesigned `/capabilities` as the **Production Atlas** with manifesto, format field, translation process, and new editorial content.
+- Redesigned `/work` as the **Film Ledger** with project index, world-based entries, and commission CTA.
+- Created root snapshots at `snapshots/capabilities/before` and `snapshots/capabilities/after`.
+- Created the image asset system under `public/assets/` with page-specific folders and `IMAGE-SYSTEM.md`.
+- Added homepage image requirements at `public/assets/images/home/HOME-IMAGE-REQUIREMENTS.txt`.
+- Added and wired the three homepage header images:
+   - `hm-01-header-left-woman-a.webp.png`
+   - `hm-02-header-right-city-a.webp.jpg`
+   - `hm-03-header-lower-tokyo-a.webp.jpg`
+- Added the image interaction direction: color at rest, noir grayscale and raised contrast on hover, with a slow zoom.
+- Fixed header fragment pointer events so the hover treatment can activate.
+- Smoothed image transitions with longer easing and compositor hints.
+- Kept image-specific hover timing active even when the browser requests reduced motion.
+
+### Validation
+
+```bash
+npm.cmd run build
+```
+
+Build passes with TypeScript checking and Vite bundling.
+
+### Current image rule
+
+Asset images use full color at rest. Hover applies `grayscale(1) contrast(1.18)` and scales the image to `1.08` with a slow eased transition.

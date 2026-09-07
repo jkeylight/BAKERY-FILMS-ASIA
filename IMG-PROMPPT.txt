@@ -1,0 +1,37 @@
+Append this to every prompt)
+8k resolution, cinematic still, photorealistic, film grain, anamorphic lens, professional color grading, high contrast, deep black shadows, muted warm highlights, wide aspect ratio --ar 21:9 --v 6.0 --style raw
+
+THE PROMPTS (Scenes for a Commercial Film)
+Scene 1: The Establishing Shot (Opening)
+
+Prompt: Aerial drone shot of a sprawling, impossibly futuristic megacity at dusk. The city is empty, devoid of cars and pedestrians. Massive skyscrapers are made of dark glass and raw concrete. The only light comes from the windows, creating a pattern of dots against the deep black sky. A solitary red navigation light blinks on top of a central tower. [MASTER STYLE SHEET]
+
+Scene 2: The Street Level (No streets, no permits)
+
+Prompt: Extreme low-angle shot standing on a pristine, unmarked asphalt street. The street is completely empty, stretching perfectly straight into the horizon. No road markings, no streetlights, no trash, no traffic signs. The facades of the buildings on either side are smooth and featureless. A lone figure in a long dark coat stands perfectly still in the center of the frame, facing away. [MASTER STYLE SHEET]
+
+Scene 3: The Interior (Generated architecture)
+
+Prompt: Interior of a massive, endless lobby. No furniture, no plants, no humans. The floor is polished black marble reflecting geometric beams of light coming from an invisible source. The architecture is monolithic and brutalist. A single, glowing white rectangle on the far wall acts as the only focal point. [MASTER STYLE SHEET]
+
+Scene 4: The Dynamic Action (The commercial moment)
+
+Prompt: A fast-moving, sleek vehicle (concept car or futuristic motorcycle) racing down an empty boulevard. The vehicle is dark, matte black, with glowing amber headlights. The motion blur on the background buildings is extreme, emphasizing the speed, yet the vehicle itself is perfectly sharp and in focus. [MASTER STYLE SHEET]
+
+Scene 5: The Human Element (The Product Focus)
+
+Prompt: Close-up, 85mm lens, of a character's hand holding a sleek, glowing, minimalist product (a bottle, a device, or a watch). The background is a completely blurred out, dark, out-of-focus cityscape (bokeh). The focus is entirely on the product and the texture of the skin. Dramatic, directional cinematic lighting on the subject. [MASTER STYLE SHEET]
+
+Scene 6: The Finale (The impossible skyline)
+
+Prompt: Looking up from the ground at an impossible angle. The skyline is twisted, architectural geometry that seems to defy gravity, yet looks structurally sound. The sky is completely black, void of stars or clouds. The city is illuminated only by artificial, cold white light from below. [MASTER STYLE SHEET]
+
+💡 TIPS FOR ENSURING CONTINUITY IN MIDJOURNEY:
+Use a Character Reference: If you have a specific actor or model in mind, add --cref [IMAGE URL] to your prompts to keep the face consistent across scenes.
+
+Use Style Reference: If you find an image that perfectly matches the "vibe" of the website image you uploaded, add --sref [IMAGE URL] to lock the color palette.
+
+The "Text" Rule: Since this has massive typography, AI models will struggle to generate exact text. Generate the background images without text using these prompts, and then overlay the typography ("A CITY THAT DOES NOT EXIST.") in Photoshop or After Effects to exactly match the design.
+
+Keep the Aspect Ratio: Always keep --ar 21:9 (or 16:9) consistent so you don't have to crop your footage and lose resolution.
+
