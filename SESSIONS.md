@@ -84,3 +84,26 @@ Build passes with TypeScript checking and Vite bundling.
 ### Current image rule
 
 Asset images use full color at rest. Hover applies `grayscale(1) contrast(1.18)` and scales the image to `1.08` with a slow eased transition.
+
+## Session: City Image Revision & GitHub Update — 2026-09-07
+
+### Completed
+
+- Added the latest city image as `public/assets/images/A-CITY-NEW-2.jpg`.
+- Switched the `A CITY THAT DOES NOT EXIST.` project poster to the new image.
+- Verified the rendered Work page path and alt text.
+- Kept the City project image under the global color-to-noir hover treatment.
+
+### GitHub
+
+- Published the project update to `jkeylight/BAKERY-FILMS-ASIA` on `main`.
+- Latest cleanup commit: `534befd`.
+- The local workspace remains an exported folder without `.git`; publishing uses a clean temporary clone.
+
+### Validation
+
+```bash
+npm.cmd run build
+```
+
+Build passes after the City image replacement.

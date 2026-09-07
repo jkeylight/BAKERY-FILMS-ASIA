@@ -101,7 +101,7 @@ function renderHome(): string {
       <div class="scene act-open" id="scene-open">
       <canvas id="open-bg" class="open-bg" aria-hidden="true"></canvas>
       <div class="cine-top" aria-hidden="true">
-        <span class="meta">BAKERY FILMS ASIA PRESENTS</span>
+        <span class="meta">BAKERY FILMS PRESENTS</span>
         <span class="meta">SCENE 001 — NIGHT</span>
       </div>
       <div class="cine-bottom" aria-hidden="true">
@@ -125,9 +125,9 @@ function renderHome(): string {
       </div>
 
       <div class="open-frags" aria-hidden="true">
-        <figure class="frag frag-1"><img class="frag-img" src="/assets/images/home/hm-01-header-left-woman-a.webp.png" alt="Fashion figure in synthetic fabric." /><figcaption class="meta">FILM — UNFINISHED CUT</figcaption></figure>
-        <figure class="frag frag-2"><img class="frag-img" src="/assets/images/home/hm-02-header-right-city-a.webp.jpg" alt="A city that does not exist." /><figcaption class="meta">COMMERCIAL — SET 00</figcaption></figure>
-        <figure class="frag frag-3"><img class="frag-img" src="/assets/images/home/hm-03-header-lower-tokyo-a.webp.jpg" alt="A night scene from Tokyo 2096." /><figcaption class="meta">IMAGE — TAKEN, NOT FOUND</figcaption></figure>
+        <figure class="frag frag-1"><canvas data-paint="frag-c1"></canvas><figcaption class="meta">FILM — UNFINISHED CUT</figcaption></figure>
+        <figure class="frag frag-2"><canvas data-paint="frag-c2"></canvas><figcaption class="meta">COMMERCIAL — SET 00</figcaption></figure>
+        <figure class="frag frag-3"><canvas data-paint="frag-c3"></canvas><figcaption class="meta">IMAGE — TAKEN, NOT FOUND</figcaption></figure>
       </div>
       </div>
     </section>
@@ -271,7 +271,7 @@ function renderHome(): string {
       </div>
       <div class="finale-grid">
         <div class="fg-main">
-          <p class="fg-word">BAKERY FILMS ASIA</p>
+          <p class="fg-word">BAKERY FILMS</p>
           <p class="meta fg-line">A FILM STUDIO FOR IMAGES THAT DIDN'T EXIST.</p>
         </div>
         <nav class="fg-col" aria-label="Footer index">
@@ -288,7 +288,7 @@ function renderHome(): string {
           <p class="meta fg-sub">IG — @BAKERYFILMS</p>
           <p class="meta fg-sub">CITY — ANYWHERE, RENDERED</p>
         </div>
-        <p class="fg-legal meta">© 2026 BAKERY FILMS ASIA / AI.<br />NO ACTORS, SETS OR LOCATIONS<br />WERE HARMED — OR EVER EXISTED.</p>
+        <p class="fg-legal meta">© 2026 BAKERY FILMS / AI.<br />NO ACTORS, SETS OR LOCATIONS<br />WERE HARMED — OR EVER EXISTED.</p>
       </div>
     </footer>
   `
@@ -297,34 +297,11 @@ function renderHome(): string {
 // ── Page: WORK ──────────────────────────────────────────────
 function renderWork(): string {
   return `
-    <section class="work-ledger page-view pe-work" id="work" aria-label="The work">
-      <header class="work-ledger-head">
-        <div class="work-ledger-top">
-          <p class="meta accent">WORK / FILM LEDGER</p>
-          <p class="meta">05 COMMISSIONS / 00 LOCATIONS</p>
-        </div>
-        <div class="work-ledger-title">
-          <p class="work-ledger-index">02</p>
-          <h1>THE<br /><span>WORK</span><i>.</i></h1>
-          <p class="work-ledger-lede">A record of images that arrived without a set, a cast or a street to stand on. Each commission is a world built to hold one precise idea.</p>
-        </div>
-        <p class="work-ledger-rule">THE PROOF IS NOT THE PRODUCTION.<br /><b>THE PROOF IS THE FRAME.</b></p>
-      </header>
-
-      <nav class="work-index" aria-label="Work index">
-        <p class="meta">INDEX / JUMP TO A WORLD</p>
-        <div class="work-index-list">
-          ${WORKS.map((w, i) => `<a href="#work-${w.id}"><span>${fmt(i + 1)}</span><strong>${escapeHtml(w.titleLines.map((line) => line.t).join(' '))}</strong><em>${escapeHtml(w.cat)}</em></a>`).join('')}
-        </div>
-      </nav>
-
-      <div class="work-ledger-list" id="work-list">
-        ${WORKS.map((w, i) => `<div id="work-${w.id}" class="work-ledger-entry">${workItem(w, i)}</div>`).join('')}
+    <section class="scene act-work page-view pe-work" id="work" aria-label="The work">
+      ${sectionHead('ACT 02 — THE WORK', 'SELECTED<br />COMMISSIONS', 'FIVE PROJECTS FROM WORLDS THAT NEVER EXISTED.<br />CLICK A FILM TO ENTER ITS CASE.')}
+      <div class="work-list" id="work-list" data-reveal>
+        ${WORKS.map((w, i) => workItem(w, i)).join('')}
       </div>
-      <footer class="work-ledger-foot">
-        <p class="meta">EVERY WORLD HAS A CUT.</p>
-        <a class="work-next" href="/contact" target="_blank" rel="noreferrer">COMMISSION THE NEXT ONE <b>↗</b></a>
-      </footer>
     </section>
     <footer class="finale" aria-label="Footer">
       <div class="finale-meta">

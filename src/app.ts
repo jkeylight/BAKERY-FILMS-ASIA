@@ -209,6 +209,13 @@ function bootLoader(): Promise<void> {
 function playOpeningIntro() {
   if (!MOTION || introStarted) return
   introStarted = true
+  const openingClock = { seconds: 0 }
+  gsap.to(openingClock, {
+    seconds: 12,
+    duration: 2.6,
+    ease: 'none',
+    onUpdate: () => setText(qs('#open-tc'), `00:00:${fmt(Math.floor(openingClock.seconds))}`),
+  })
   gsap.timeline({ delay: 0.05 })
     .to('.ol .ol-i', { y: '0%', duration: 1.15, ease: 'power4.out', stagger: 0.14 }, 0.05)
     .to('.open-frags .frag', { autoAlpha: 1, duration: 1, ease: 'power2.out', stagger: 0.18 }, 0.9)
@@ -251,8 +258,6 @@ function initScroll() {
     },
   })
 
-  gsap.set('[data-reveal]', { autoAlpha: 0, y: 34 })
-
   const reveals = qsa<HTMLElement>('[data-reveal]')
   if (reveals.length) {
     ScrollTrigger.batch(reveals, {
@@ -285,8 +290,6 @@ function initSceneOpen() {
     cutWord.classList.add('cut')
   }
 
-  gsap.set('#open-sub', { autoAlpha: 0 })
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: drive, start: 'top top', end: 'bottom bottom', scrub: 0.6,
@@ -303,7 +306,7 @@ function initSceneOpen() {
     .call(() => showCut(3), undefined, 6.9)
     .to('.open-stage .open-tc', { autoAlpha: 0, duration: 0.6 }, 7.1)
     .to('.open-lines', { autoAlpha: 0, yPercent: -18, duration: 1.1 }, 7.6)
-    .fromTo('#open-sub', { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.1 }, 8.3)
+    .to('#open-sub', { autoAlpha: 1, duration: 1.1 }, 8.3)
     .to('.open-frags .frag', { yPercent: -9, autoAlpha: 0.4, duration: 1.6, stagger: 0.25 }, 7.4)
 }
 
